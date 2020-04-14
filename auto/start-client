@@ -1,0 +1,10 @@
+#!/bin/bash -eu
+
+cd $(dirname $0)/..
+
+cd client
+
+export REACT_APP_GOOGLE_CLIENT_ID=foo
+export REACT_APP_API_ENDPOINT=http://localhost:5000
+
+npm start

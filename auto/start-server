@@ -1,0 +1,14 @@
+#!/bin/bash -eu
+
+cd $(dirname $0)/..
+
+cd server
+
+export EMAIL_USER=fake@gmail.com
+export EMAIL_PASS=fakepword
+export AWS_ACCESS_KEY_ID=dummy
+export AWS_SECRET_ACCESS_KEY=dummy
+export AWS_REGION=localhost
+export DYNAMODB_ENDPOINT=http://localhost:8000
+
+npm start

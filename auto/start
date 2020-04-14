@@ -1,0 +1,10 @@
+#!/bin/bash -eu
+
+cd $(dirname $0)/..
+
+# Clean up at the end
+trap "docker-compose down --volumes" 0
+
+docker-compose run --rm client npm install
+
+docker-compose run --rm --service-ports client

@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  font-family: monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #333;
+}
+
+code {
+  font-family: monospace;
+}
+
+.bm-menu {
+  width: 100% !important;
+}
+
+html, body, #app, #app>div, #root {
+  height: 100%
+}
+
+.bm-cross-button, .bm-burger-button {
+  display: none;
+}
+
+.bm-menu-wrap {
+  margin-left: 0 !important;
+  padding: 0 !important;
+}

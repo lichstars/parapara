@@ -1,0 +1,9 @@
+#!/bin/bash -eu
+
+cd $(dirname $0)/..
+
+cd resources
+
+#create tables on local dyanmodb
+aws dynamodb create-table --cli-input-json file://users.json --endpoint-url http://localhost:8000
+aws dynamodb create-table --cli-input-json file://stories.json --endpoint-url http://localhost:8000

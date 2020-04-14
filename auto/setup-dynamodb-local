@@ -1,0 +1,13 @@
+#!/bin/bash -eu
+
+cd $(dirname $0)/..
+
+mkdir dynamodb
+
+cd dynamodb
+
+# download aws dynamodb local zip file
+wget "https://s3-us-west-2.amazonaws.com/dynamodb-local/dynamodb_local_latest.zip"
+
+#start db
+java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb

@@ -1,0 +1,42 @@
+version: '2'
+
+services:
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile.dev
+    tty: true
+    depends_on:
+      - server
+    ports:
+      - "3000:3000"
+    links:
+      - server
+    environment:
+      REACT_APP_API_ENDPOINT: http://localhost:5000
+      REACT_APP_GOOGLE_CLIENT_ID: 
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile.dev
+    environment:
+      EMAIL_USER: fakeemail
+      EMAIL_PASS: fakepassword
+      AWS_ACCESS_KEY_ID: dummy
+      AWS_SECRET_ACCESS_KEY: dummy
+      AWS_REGION: localhost
+      DYNAMODB_ENDPOINT: http://docker.for.mac.localhost:8000
+    ports:
+      - "5000:5000"
+    links:
+      - dynamodb
+    tty: true
+    depends_on:
+      - dynamodb
+  dynamodb:
+    image: amazon/dynamodb-local:latest
+    ports:
+      - "8000:8000"
+    expose:
+      - "8000"
+    command: ["-jar", "DynamoDBLocal.jar", "-sharedDb", "-inMemory"]

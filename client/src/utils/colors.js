@@ -1,0 +1,16 @@
+export default {
+  PINK: '#ff3399',
+  GREY: '#999',
+  WHITE: '#fff',
+  BACKGROUNDMOBILE: '#212529',
+  MENUHOVERITEM: '#9993',
+  BACKGROUND: '#131619',
+  BRIGHTBLUE: '#00dcff',
+  HOTPINK: '#ff0bd4',
+  TIMESTAMP: '#ffc107',
+  BRIGHTGREEN: '#0f4',
+  BLACK: '#000',
+  RED: 'red',
+  DARKPURPLE: '#220a69',
+  YELLOW: 'yellow',
+}
